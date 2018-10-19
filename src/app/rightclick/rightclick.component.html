@@ -1,0 +1,20 @@
+<h1>Angular2 Context Menu Demo</h1>
+<div (click)="$event.preventDefault()" style="margin:20px; padding:20px">
+
+  <div (click)="$event.preventDefault()" style="transform: translate3d(10px, -10px, 0px)">
+
+        <div class="componentContainer" *ngFor="let item of items" style="pointer-events: all" [ngStyle]="item.layout" [contextMenu]="componentMenu"
+             [contextMenuSubject]="item">
+          {{ item.name }}
+        </div>
+        <context-menu #componentMenu>
+          <ng-template contextMenuItem (execute)="showMessage('Hi, ' + $event.item.name)">
+            Say hi!
+          </ng-template>
+          <ng-template contextMenuItem let-item (execute)="showMessage($event.event)">
+            Bye, {{item?.name}}
+          </ng-template>
+        </context-menu>
+      </div>
+    </div>
+

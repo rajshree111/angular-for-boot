@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-lg-4">
+
+  </div>
+
+  <div class="col-lg-2 bordering">
+    <h4> Admin #1</h4>
+    <div class="row">
+      <div class="col-lg-12" *ngFor="let item of items" [contextMenu]="componentMenu"
+           [contextMenuSubject]="items">
+        <div class="sever">
+        <span>01</span><a><img src="../../assets/server.jpg" alt="server images">
+          <div class="app_up"></div>
+          <div class={{getpowerstatus(2)}}></div>
+      </a>
+        </div>
+        <context-menu #componentMenu>
+          <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(1) ,1)">
+            {{getLockUnlockOption(1)}}
+          </ng-template>
+          <ng-template contextMenuItem let-item (execute)="reboot(1)">
+            reboot
+          </ng-template>
+        </context-menu>
+      </div>
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,135 @@
+.sever {
+  display: block;
+  border: 1px solid;
+  position: absolute;
+
+}
+
+
+.app_up {
+  position: absolute;
+  bottom: 42px;
+  /*left:5px;*/
+  right:55px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: green;
+  /*border-left: 10px solid transparent;*/
+  /*border-right: 10px solid transparent;*/
+  /*border-bottom: 20px solid green;*/
+}
+.triangle-up-app-full {
+  position: absolute;
+  top:  20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid green;
+}
+
+.triangle-powering-down-1 {
+  position: absolute;
+  bottom: 50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid darkred;
+  display:  block;
+}
+
+.powering_down{
+  position: absolute;
+  bottom: 8px;
+  right:50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid darkred;
+  display:  block;
+}
+
+.powering_up {
+  position: absolute;
+  top:  40px;
+  right:50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid green;
+}
+
+.triangle-powering-up-2 {
+  position: absolute;
+  top:  85px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid green;
+}
+
+.triangle-launching-1 {
+  position: absolute;
+  top:  75px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid gray;
+}
+
+.wait_for_launch {
+  position: absolute;
+  top:  40px;
+  right:50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid gray;
+}
+.up {
+  position: absolute;
+  /*left: 5px;*/
+  right:55px;
+  bottom: 15px;
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  border-radius: 50%;
+}
+.down{
+  position: absolute;
+  /*left: 12px;*/
+  right:55px;
+  bottom: 15px;
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.reboot_in_progress {
+  position: absolute;
+  /*left: 5px;*/
+  right:55px;
+  bottom: 15px;
+  height: 15px;
+  width: 15px;
+  border-radius: 10px/10px;
+  border: solid 3px green;
+}
+
+
+.bordering{
+  border-style: double;
+  height:500px;
+}
+
+
+

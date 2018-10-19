@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="col-md-offset-1">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      -----------
+    </div>
+    <div class="col-lg-6">
+      ###########
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-8">
+
+      <ul class="nav nav-tabs">
+        <!--<li>-->
+        <!--<a href="cm/bladeview">CMView</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="/cm/bladeview">PMView</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="/cm/bladeview">FMView</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="/cm/bladeview">SMView</a>-->
+        <!--</li>-->
+        <li>
+          <a routerLink="/cm/bladeview" routerLinkActive="router-link-active">CMView</a>
+        </li>
+        <li>
+          <a routerLink="/pm/form" routerLinkActive="router-link-active">PMView</a>
+        </li>
+        <li>
+          <a routerLink="/rightclick2/test" routerLinkActive="router-link-active">FMView</a>
+        </li>
+        <li>
+        <a routerLink="/blades/rightclick" routerLinkActive="router-link-active">SMView</a>
+      </li>
+        <li>
+          <a routerLink="/blades/dragscroll" routerLinkActive="router-link-active">dragscroll</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-lg-7">
+
+    </div>
+    <div class="col-lg-2 alarm_summary_label">
+      <h4>Alarm Summary : </h4>
+    </div>
+    <div class="col-lg-3">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#">critical</a></li>
+        <li><a href="#">major</a></li>
+        <li><a href="#">minor</a></li>
+      </ul>
+    </div>
+  </div>
+<br>
+
+  <br>
+  <router-outlet></router-outlet>
+</div>
+

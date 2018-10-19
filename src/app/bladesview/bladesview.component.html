@@ -1,0 +1,447 @@
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+
+  <div class="row">
+
+    <div class="col-lg-4">
+
+        <div *ngIf="data else other_content">
+            <h1>{{data[0].bladeId}}</h1>
+            <h2>{{data[1].bladeId}}</h2>
+        
+        </div>
+        
+        <ng-template #other_content><h1>Loading...</h1></ng-template>
+
+    </div>
+
+    <div class="col-lg-2 bordering">
+      <h4> Admin #1</h4>
+      <div class="row">
+        <div class="col-lg-12" *ngFor="let item of items" [contextMenu]="componentMenu"
+             [contextMenuSubject]="items">
+          <div class="sever">
+            <span>01</span><a><img src="../../assets/server.jpg" alt="server images">
+            <div class="app_up"></div>
+            <div class={{getpowerstatus(1)}}></div>
+          </a>
+          </div>
+          <context-menu #componentMenu>
+            <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(1) ,1)">
+              {{getLockUnlockOption(1)}}
+            </ng-template>
+            <ng-template contextMenuItem let-item (execute)="reboot(1)">
+              reboot
+            </ng-template>
+          </context-menu>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br>
+      <h4> Admin #2</h4>
+      <div class="row">
+        <div class="col-lg-12" *ngFor="let item of items" [contextMenu]="componentMenu"
+             [contextMenuSubject]="items">
+          <div class="sever">
+            <span>02</span><a><img src="../../assets/server.jpg" alt="server images">
+            <div class="app_up"></div>
+            <div class={{getpowerstatus(2)}}></div>
+          </a>
+          </div>
+          <context-menu #componentMenu>
+          <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(2) ,2)">
+            {{getLockUnlockOption(2)}}
+          </ng-template>
+          <ng-template contextMenuItem let-item (execute)="reboot(2)">
+            reboot
+          </ng-template>
+          </context-menu>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-6 bordering">
+      <div class="acn-blades "><h4>#ACN</h4>
+
+        <div class="row">
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div ng-controller="MainCtrl" class="sever">
+              <span>03</span><a context-menu="myContextDiv"><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(3)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(3) ,3)">
+                {{getLockUnlockOption(3)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(3)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>04</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(4)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(4) ,4)">
+                {{getLockUnlockOption(4)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(4)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>05</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(5)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(5) ,5)">
+                {{getLockUnlockOption(5)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(5)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>06</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(6)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(6) ,6)">
+                {{getLockUnlockOption(6)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(6)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>07</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(7)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(7) ,7)">
+                {{getLockUnlockOption(7)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(7)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+        </div>
+        <br><br><br><br><br>
+
+
+        <div class="row">
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>08</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(8)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(8) ,8)">
+                {{getLockUnlockOption(8)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(8)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>09</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(9)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(9) ,9)">
+                {{getLockUnlockOption(9)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(9)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>10</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(10)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(10) ,10)">
+                {{getLockUnlockOption(10)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(10)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>11</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(11)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(11) ,11)">
+                {{getLockUnlockOption(11)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(11)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>12</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(12)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(12) ,12)">
+                {{getLockUnlockOption(12)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(12)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+        </div>
+      </div>
+
+
+      <br><br><br><br><br>
+
+      <div class="UP-modules"><h4>#UP</h4>
+
+        <div class="row">
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>13</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(13)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(13) ,13)">
+                {{getLockUnlockOption(13)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(13)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>14</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(14)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(14) ,14)">
+                {{getLockUnlockOption(14)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(14)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>15</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(15)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(15) ,15)">
+                {{getLockUnlockOption(15)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(15)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>16</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(16)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(16) ,16)">
+                {{getLockUnlockOption(16)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(16)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>17</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(17)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(17) ,17)">
+                {{getLockUnlockOption(17)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(17)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+        </div>
+
+        <br><br><br><br><br>
+        <div class="row">
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>18</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(18)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(18) ,18)">
+                {{getLockUnlockOption(18)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(18)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>19</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(19)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(19) ,19)">
+                {{getLockUnlockOption(19)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(19)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>20</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(20)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(20) ,20)">
+                {{getLockUnlockOption(20)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(20)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>21</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(21)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(21) ,21)">
+                {{getLockUnlockOption(21)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(21)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+
+          <div class="col-lg-2" *ngFor="let item of items" [contextMenu]="componentMenu"
+               [contextMenuSubject]="items">
+            <div class="sever">
+              <span>22</span><a><img src="../../assets/server.jpg" alt="server images">
+              <div class="app_up"></div>
+              <div class={{getpowerstatus(22)}}></div>
+            </a>
+            </div>
+            <context-menu #componentMenu>
+              <ng-template contextMenuItem (execute)="lockUnlock(getLockUnlockOption(22) ,22)">
+                {{getLockUnlockOption(22)}}
+              </ng-template>
+              <ng-template contextMenuItem let-item (execute)="reboot(22)">
+                reboot
+              </ng-template>
+            </context-menu>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

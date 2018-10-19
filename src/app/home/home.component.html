@@ -1,0 +1,19 @@
+<div class="content">
+  <p class="title">DRAG AND SCROLL!</p>
+  <div class="demo-border">
+    <div class="demo-one"
+      dragScroll
+      drag-scroll-y-disabled="true"
+      scrollbar-hidden="true"
+      (reachesLeftBound)="leftBoundStat($event)"
+      (reachesRightBound)="rightBoundStat($event)"
+      #nav
+      >
+      <img *ngFor="let image of imagelist" [src]="'assets/' + image" (click)="clickItem(image)"/>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" [disabled]="leftNavDisabled" (click)="moveLeft()">left</button>
+    <button mat-raised-button color="primary" [disabled]="rightNavDisabled" (click)="moveRight()">right</button>
+  </div>
+</div>
